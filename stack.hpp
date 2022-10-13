@@ -1,9 +1,9 @@
 #ifndef STACK_HPP
 # define STACK_HPP
 
+# include "type_traits.hpp"
 # include "vector.hpp"
 # include <iostream>
-// # include "type_traits.hpp"
 
 namespace ft {
 template <class T, class Container = vector<T> > 
@@ -30,44 +30,44 @@ class stack {
 		void	swap(stack &ref) { this->c.swap(ref.c); };
 };
 
-template <typename T, typename Sequence>
-	bool	operator==(stack<T, Sequence> const & lhd, stack<T, Sequence> const & rhd)
+template <typename T, typename Container>
+	bool	operator==(stack<T, Container> const & lhd, stack<T, Container> const & rhd)
 	{
 		return (lhd.c == rhd.c);
 	};
 
-template <typename T, typename Sequence>
-	bool	operator!=(stack<T, Sequence> const & lhd, stack<T, Sequence> const & rhd)
+template <typename T, typename Container>
+	bool	operator!=(stack<T, Container> const & lhd, stack<T, Container> const & rhd)
 	{
 		return !(lhd.c == rhd.c);
 	};
 
-template <typename T, typename Sequence>
-	bool	operator<(stack<T, Sequence> const & lhd, stack<T, Sequence> const & rhd)
+template <typename T, typename Container>
+	bool	operator<(stack<T, Container> const & lhd, stack<T, Container> const & rhd)
 	{
 		return (lhd.c < rhd.c);
 	};
 
-template <typename T, typename Sequence>
-	bool	operator<=(stack<T, Sequence> const & lhd, stack<T, Sequence> const & rhd)
+template <typename T, typename Container>
+	bool	operator<=(stack<T, Container> const & lhd, stack<T, Container> const & rhd)
 	{
 		return !(rhd.c < lhd.c);
 	};
 
-template <typename T, typename Sequence>
-	bool	operator>(stack<T, Sequence> const & lhd, stack<T, Sequence> const & rhd)
+template <typename T, typename Container>
+	bool	operator>(stack<T, Container> const & lhd, stack<T, Container> const & rhd)
 	{
 		return (rhd.c < lhd.c);
 	};
 
-template <typename T, typename Sequence>
-	bool	operator>=(stack<T, Sequence> const & lhd, stack<T, Sequence> const & rhd)
+template <typename T, typename Container>
+	bool	operator>=(stack<T, Container> const & lhd, stack<T, Container> const & rhd)
 	{
 		return !(lhd.c < rhd.c);
 	};
 
-template <typename T, typename Sequence>
-	void	swap(stack<T, Sequence> const & lhd, stack<T, Sequence> const & rhd)
+template <typename T, typename Container>
+	void	swap(stack<T, Container> const & lhd, stack<T, Container> const & rhd)
 	{
 		lhd.swap(rhd);
 	};
