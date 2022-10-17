@@ -11,7 +11,7 @@
 
 namespace ft
 {
-	template <typename T, class Alloc = std::allocator<T>>
+	template <typename T, class Alloc = std::allocator<T> >
 	class vector
 	{
 		public:
@@ -27,8 +27,8 @@ namespace ft
 			typedef  			ft::vector_iterator<pointer>						iterator;
 			typedef  			ft::vector_iterator<const_pointer>					const_iterator;
 			typedef typename	ft::iterator_traits<iterator>::difference_type		difference_type;
-			typedef				reverse_iterator<const_iterator>					const_reverse_iterator;
-			typedef 			reverse_iterator<iterator>							reverse_iterator;
+			typedef				ft::reverse_iterator<const_iterator>				const_reverse_iterator;
+			typedef 			ft::reverse_iterator<iterator>						reverse_iterator;
 
 		private:
 
@@ -83,11 +83,11 @@ namespace ft
 
 		public:
 			explicit	vector(const allocator_type & alloc = allocator_type())
-				: _values(nullptr), _size(0), _capacity(0), _allocator(alloc) {};
+				:  _allocator(alloc), _values(NULL), _size(0), _capacity(0) {};
 
 			explicit	vector(size_type n, const value_type & val = value_type(),
 				const allocator_type & alloc = allocator_type())
-					: _values(nullptr), _size(n), _capacity(n)
+					: _values(NULL), _size(n), _capacity(n)
 			{
 				this->_allocator = allocator_type(alloc);
 
@@ -98,14 +98,14 @@ namespace ft
 
 			template <class InputIterator>
 			vector(InputIterator first, InputIterator last, const allocator_type & alloc = allocator_type())
-				: _values(nullptr), _size(std::distance(first, last)), _capacity(std::distance(first, last)), _allocator(alloc)
+				: _values(NULL), _size(std::distance(first, last)), _capacity(std::distance(first, last)), _allocator(alloc)
 			{
 				this->_values = this->_allocator.allocate(std::distance(first, last));
 				std::copy(first, last, this->begin());
 			};
 
 			vector(const vector & src)
-				: _values(nullptr), _size(0), _capacity(0)
+				: _values(NULL), _size(0), _capacity(0)
 			{
 				*this = src;
 			};

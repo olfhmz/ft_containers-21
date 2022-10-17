@@ -14,10 +14,10 @@ class stack {
 		typedef typename	container_type::reference																reference;
 		typedef typename	container_type::const_reference															const_reference;
 		typedef typename	container_type::size_type																size_type;
-	protected:
+	
 		Container	c;
-	private:
-		explicit stack (const container_type& ctnr = container_type()) :c(ctnr) {};
+	
+		explicit stack (const container_type& ctnr = container_type()) : c(ctnr) {};
 		
 		~stack () {};
 

@@ -1,6 +1,8 @@
 #ifndef TYPE_TRAITS
 # define TYPE_TRAITS
 
+# include <uchar.h>
+
 namespace ft {
 	template <bool Cond, typename T = void>
 		struct enable_if {};
@@ -21,7 +23,7 @@ namespace ft {
 
 			static const T value = v;
 
-			operator	T(void) { return (value) };
+			operator	T(void) { return (value); };
 		};
 	
 	// реализация(?использование?) integral_constant
@@ -64,11 +66,11 @@ namespace ft {
 	template <>
 	struct _is_integral_helper<char> : public true_type {};
 
-	template <>
-	struct _is_integral_helper<char16_t> : public true_type {};
+	// template <>
+	// struct _is_integral_helper<char16_t> : public true_type {}; //тут был char16_t
 
-	template <>
-	struct _is_integral_helper<char32_t> : public true_type {};
+	// template <>
+	// struct _is_integral_helper<char32_t> : public true_type {}; // а тут char32_t
 
 	template <>
 	struct _is_integral_helper<wchar_t> : public true_type {};

@@ -28,7 +28,7 @@ namespace ft {
 
 				reference operator*(void) { return *_current; };
 				pointer operator->(void) const { return _current; };
-				reference operator[](difference_type n) const { return (this->_current[n]; };
+				reference operator[](difference_type n) const { return (this->_current[n]); };
 				vector_iterator &operator+(difference_type n) const { return (vector_iterator(this->_current + n)); };
 				vector_iterator	operator++(int) { return (vector_iterator(this->_current++)); };
 				vector_iterator	operator-(difference_type n) const { return (vector_iterator(this->_current - n)); };
