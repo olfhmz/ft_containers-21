@@ -3,7 +3,7 @@
 #include <deque>
 
 # define TEST_STL 1
- #if TEST_STL //CREATE A REAL STL EXAMPLE
+ #if !TEST_STL //CREATE A REAL STL EXAMPLE
  	#include <map>
  	#include <stack>
  	#include <vector>

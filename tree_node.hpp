@@ -113,7 +113,7 @@ namespace ft {
 				*this->parent->dirs[i] = this;
 			};
 
-			// притворяемя крысами (ссылки кардутся)
+			// притворяемя крысами (ссылки кoрдутця)
 			void	stealLinks(const TreeNode & src)
 			{
 				this->parent = src.parent;
@@ -151,7 +151,7 @@ namespace ft {
 				return (*this->parent->dirs[!this->getDir()]);
 			};
 
-			// ммм~ нацисткие шутки
+			// ммм~ расиситкие шутки
 			bool	allChildrensBlack(void)	const
 			{
 				return ((!this->left || !this->left->red) && (!this->right || !this->right->red));
